@@ -3,15 +3,10 @@
 Team = c("Arizona","Atlanta","Baltimore","Boston","Chicago (AL)","Chicago (NL)","Cincinnati","Cleveland","Colorado","Detroit","Houston","Kansas City","Anaheim","Los Angeles","Miami","Milwaukee","Minnesota","New York (AL)","New York (NL)","Oakland","Philadelphia","Pittsburgh","San Diego","San Francisco","Seattle","St. Louis","Tampa Bay","Texas","Toronto","Washington","Montreal") #SAME AS SPREADSHEET
 titles = c(5, 20, 9, 10, 5, 8, 10, 10, 0, 7, 10, 7, 9, 19, 0, 4, 12, 19, 6, 17, 11, 9, 5, 8, 3, 14, 3, 7, 6, 5, 1)
 
-#Bring in the heap of data
-install.packages("readxl")
-library("readxl")
-
-div_ldrs = read_excel(file.choose())
+div_ldrs = read.csv(file.choose())
 cols = colnames(div_ldrs)
 
 #Split by month
-install.packages("tidyverse")
 library(tidyverse)
 
 may = select(div_ldrs, ends_with("May"))
@@ -46,6 +41,8 @@ calc_cor <- function(df) {
   Model<- lm(v~titles)
   abline(Model, col = "green")
   legend("topleft",legend=paste("R^2 is", format(summary(Model)$r.squared,digits=3)))
+  legend(x='bottomright', 
+         legend=paste('Cor =', round(cor(titles, v), 2)))
 }
 
 calc_cor(may)
