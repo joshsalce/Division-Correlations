@@ -38,9 +38,7 @@ calc_cor <- function(df) {
     v = c(v, team_leads)
   }
   div_plot = plot(v, titles, xlab="Leading in Month", ylab = "Division Titles", pch = 16)
-  Model<- lm(v~titles)
-  abline(Model, col = "green")
-  legend("topleft",legend=paste("R^2 is", format(summary(Model)$r.squared,digits=3)))
+
   legend(x='bottomright', 
          legend=paste('Cor =', round(cor(titles, v), 2)))
 }
