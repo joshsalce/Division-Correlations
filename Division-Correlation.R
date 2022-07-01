@@ -1,7 +1,15 @@
 #List of teams
 
-Team = c("Arizona","Atlanta","Baltimore","Boston","Chicago (AL)","Chicago (NL)","Cincinnati","Cleveland","Colorado","Detroit","Houston","Kansas City","Anaheim","Los Angeles","Miami","Milwaukee","Minnesota","New York (AL)","New York (NL)","Oakland","Philadelphia","Pittsburgh","San Diego","San Francisco","Seattle","St. Louis","Tampa Bay","Texas","Toronto","Washington","Montreal") #SAME AS SPREADSHEET
-titles = c(5, 20, 9, 10, 5, 8, 10, 10, 0, 7, 10, 7, 9, 19, 0, 4, 12, 19, 6, 17, 11, 9, 5, 8, 3, 14, 3, 7, 6, 5, 1)
+Team = c("Arizona","Atlanta","Baltimore","Boston","Chicago (AL)",
+         "Chicago (NL)","Cincinnati","Cleveland","Colorado","Detroit",
+         "Houston","Kansas City","Anaheim","Los Angeles","Miami",
+         "Milwaukee","Minnesota","New York (AL)","New York (NL)","Oakland",
+         "Philadelphia","Pittsburgh","San Diego","San Francisco","Seattle",
+         "St. Louis","Tampa Bay","Texas","Toronto","Washington","Montreal") 
+
+titles = c(5, 21, 9, 10, 6, 8, 10, 10, 0, 7, 
+           11, 7, 9, 19, 0, 5, 12, 19, 6, 17,
+           11, 9, 5, 9, 3, 14, 4, 7, 6, 5, 1)
 
 div_ldrs = read.csv(file.choose())
 cols = colnames(div_ldrs)
